@@ -4,7 +4,7 @@ import { Button, Card } from "react-bootstrap";
 import PropTypes from "prop-types";
 
 const Advertisement = ({ advertisement }) => {
-  const { id, title, price, description, city } = advertisement;
+  const { id, title, price, city } = advertisement;
   const onShowDetailsButton = useNavigate();
 
   Advertisement.propTypes = {
@@ -25,9 +25,7 @@ const Advertisement = ({ advertisement }) => {
             >
               Details
             </Button>
-            {/* <Button
-                            variant='danger'
-                            onClick={() => onDeleteButtonClick(donor)}>Delete</Button> */}
+
           </Card.Body>
         </Card>
       </Col>
