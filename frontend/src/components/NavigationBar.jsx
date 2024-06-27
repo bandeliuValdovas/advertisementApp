@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useNavigate } from 'react-router-dom';
+import Logout from "../authentication/Logout";
 
 function NavigationBar() {
   const navigate = useNavigate();
@@ -34,7 +35,7 @@ function NavigationBar() {
               </NavDropdown.Item>
             </NavDropdown>
             <Button variant='success' onClick={()=>{goToLoginPage()}}>Login</Button>
-            {/* <Button variant='danger' onClick={()=>{Logout()}}>Logout</Button> */}
+            <Button variant='danger' onClick={()=>{Logout()}}>Logout</Button>
           </Nav>
         </Navbar.Collapse>
       </Container>
