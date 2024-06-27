@@ -24,7 +24,7 @@ function NavigationBar() {
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/advertisements">Advertisements</Nav.Link>
             <NavDropdown title="Add" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/addbook">Add Book</NavDropdown.Item>
+              <NavDropdown.Item href="/createAdd">Create Advertisement</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Add Category
               </NavDropdown.Item>

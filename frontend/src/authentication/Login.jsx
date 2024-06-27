@@ -40,6 +40,10 @@ const Login = () => {
 
   return (
     <Form onSubmit={authenticateUser}>
+      <Form.Text className="text-muted">
+        If you have no accoun please go to{" "}
+        <a href="/registration">registration</a> page.
+      </Form.Text>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Control
           type="email"

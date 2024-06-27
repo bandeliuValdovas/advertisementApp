@@ -8,7 +8,7 @@ const AdvertisementDetails = () => {
   const [advertisement, setAdvertisement] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
-//   const onEditBookButton = useNavigate();
+  const onEditAdvertisementButton = useNavigate();
 
   useEffect(() => {
     axiosInstance
@@ -60,7 +60,7 @@ const AdvertisementDetails = () => {
         <p>Price: {price}</p>
         <p>City {city}</p>
         
-        {/* <Button variant="warning" onClick={()=>onEditBookButton("/editbook/", {state: book})}>Edit Book</Button> */}
+        <Button variant="warning" onClick={()=>onEditAdvertisementButton("/editAdd/", {state: advertisement})}>Edit Addvertisement</Button>
         <Button variant="danger" onClick={()=>deleteAdvertisement(id)}>Delete</Button>
       </Card>
     </>
