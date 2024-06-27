@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:mydb
+    driverClassName: org.h2.Driver
+    username:
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console.enabled: true
+#  application:
+#    name: bookRecommendationApp
+app:
+  constants:
+    security:
+      jwt-secret-key: 0fac5bb5324bcafd8dd0cea6b83257d8df8ef93b72608f37de02f01d0559aef6
