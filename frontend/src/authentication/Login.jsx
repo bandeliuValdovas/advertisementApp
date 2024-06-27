@@ -6,9 +6,9 @@ import axios from "axios";
 const Login = () => {
   const [formData, setFormData] = useState({
     email: "",
-    password: ""
+    password: "",
   });
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleForm = (event) => {
     setFormData((prevData) => ({
@@ -20,22 +20,26 @@ const Login = () => {
   const authenticateUser = (event) => {
     event.preventDefault();
 
-    axios.post("http://localhost:8080/api/v1/auth/authenticate", {
+    axios
+      .post("http://localhost:8080/api/v1/auth/authenticate", {
         email: formData.email,
-        password: formData.password})
-    .then((response) => {
+        password: formData.password,
+      })
+      .then((response) => {
+        const token = response.data.token;
+        localStorage.setItem("jwtToken", token);
         console.log(response);
         alert("success");
-    }).catch((error) => {
+      })
+      .catch((error) => {
         setErrorMessage(error.response.data.detail);
         console.log("error message:  ", errorMessage);
         console.log(error.response.data.detail);
-    });
+      });
   };
 
   return (
     <Form onSubmit={authenticateUser}>
-      
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Control
           type="email"
@@ -61,7 +65,6 @@ const Login = () => {
       {errorMessage && <div style={{ color: "red" }}>{errorMessage}</div>}
     </Form>
   );
-
-}; 
+};
 
 export default Login;
